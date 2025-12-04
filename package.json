@@ -1,0 +1,23 @@
+{
+  "name": "yttquiz",
+  "version": "1.0.0",
+  "description": "YTT Readiness Quiz - Interactive assessment for Yoga Teacher Training",
+  "main": "index.html",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "yoga",
+    "teacher-training",
+    "quiz",
+    "assessment"
+  ],
+  "author": "gina-coffee-commits",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gina-coffee-commits/Yttquiz"
+  }
+}

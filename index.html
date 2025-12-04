@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take a 60-second YTT readiness quiz to discover where you are on your yoga teacher training path.">
+    <meta name="theme-color" content="#8b9d83">
+    <title>YTT Readiness Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="popup">
+        <button class="close-btn" onclick="closePopup()" aria-label="Close popup">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <div class="popup-content">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+
+            <!-- Screen 1: Hook -->
+            <div class="screen active" id="screen-0">
+                <h2>Not sure if you're ready for YTT?</h2>
+                <p class="subhead">Take this 60-second quiz to find out where you are on your path — and what comes next.</p>
+                <button class="cta-btn" onclick="nextScreen()">Start Quiz →</button>
+            </div>
+
+            <!-- Questions 1-8 -->
+            <div class="screen" id="screen-1">
+                <p class="question-number">Question 1 of 8</p>
+                <h2>How long have you been practicing yoga?</h2>
+                <div class="options" data-question="1">
+                    <div class="option" data-value="1">I'm a complete beginner</div>
+                    <div class="option" data-value="2">3–6 months</div>
+                    <div class="option" data-value="3">6–12 months</div>
+                    <div class="option" data-value="4">1+ year</div>
+                    <div class="option" data-value="5">Several years</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-2">
+                <p class="question-number">Question 2 of 8</p>
+                <h2>What motivates you to consider YTT?</h2>
+                <div class="options" data-question="2">
+                    <div class="option" data-value="2">Deeper self-understanding</div>
+                    <div class="option" data-value="3">Improve my personal practice</div>
+                    <div class="option" data-value="4">Become a certified teacher</div>
+                    <div class="option" data-value="5">Life transformation</div>
+                    <div class="option" data-value="1">Just curious</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-3">
+                <p class="question-number">Question 3 of 8</p>
+                <h2>What describes your current practice?</h2>
+                <div class="options" data-question="3">
+                    <div class="option" data-value="1">Once a week</div>
+                    <div class="option" data-value="2">Inconsistent but trying</div>
+                    <div class="option" data-value="3">2–3x per week</div>
+                    <div class="option" data-value="4">Regular and committed</div>
+                    <div class="option" data-value="5">Yoga is core to my life</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-4">
+                <p class="question-number">Question 4 of 8</p>
+                <h2>How comfortable are you learning anatomy, alignment, and philosophy?</h2>
+                <div class="options" data-question="4">
+                    <div class="option" data-value="1">Nervous</div>
+                    <div class="option" data-value="2">Curious but unsure</div>
+                    <div class="option" data-value="3">Ready to learn</div>
+                    <div class="option" data-value="4">Excited</div>
+                    <div class="option" data-value="5">Give me ALL the knowledge</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-5">
+                <p class="question-number">Question 5 of 8</p>
+                <h2>How do you handle new challenges?</h2>
+                <div class="options" data-question="5">
+                    <div class="option" data-value="1">I get overwhelmed</div>
+                    <div class="option" data-value="2">I take it slow</div>
+                    <div class="option" data-value="3">I do my best</div>
+                    <div class="option" data-value="4">I grow through challenges</div>
+                    <div class="option" data-value="5">I thrive when pushed</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-6">
+                <p class="question-number">Question 6 of 8</p>
+                <h2>Are you open to emotional growth and self-reflection?</h2>
+                <div class="options" data-question="6">
+                    <div class="option" data-value="1">A little</div>
+                    <div class="option" data-value="2">Yes</div>
+                    <div class="option" data-value="3">Definitely</div>
+                    <div class="option" data-value="4">Very much</div>
+                    <div class="option" data-value="5">This is exactly what I want</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-7">
+                <p class="question-number">Question 7 of 8</p>
+                <h2>What kind of environment helps you grow?</h2>
+                <div class="options" data-question="7">
+                    <div class="option" data-value="1">Quiet, slow-paced</div>
+                    <div class="option" data-value="2">Supportive community</div>
+                    <div class="option" data-value="3">Structured learning</div>
+                    <div class="option" data-value="4">Challenging but safe</div>
+                    <div class="option" data-value="5">All of the above</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <div class="screen" id="screen-8">
+                <p class="question-number">Question 8 of 8</p>
+                <h2>Why Bali for your training?</h2>
+                <div class="options" data-question="8">
+                    <div class="option" data-value="1">Nature & calm</div>
+                    <div class="option" data-value="2">Spiritual energy</div>
+                    <div class="option" data-value="3">A new chapter in life</div>
+                    <div class="option" data-value="4">Full immersion in yoga</div>
+                    <div class="option" data-value="5">All of the above</div>
+                </div>
+                <button class="cta-btn" onclick="nextScreen()" disabled>Next</button>
+            </div>
+
+            <!-- Email Capture -->
+            <div class="screen" id="screen-9">
+                <h2>You're almost there.</h2>
+                <p class="subhead">Enter your email to see your results + get personalized guidance for your YTT path.</p>
+                <input type="email" id="emailInput" placeholder="your@email.com" required>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="updatesCheckbox" checked>
+                    <label for="updatesCheckbox">Yes, send me updates about upcoming trainings</label>
+                </div>
+                <p class="privacy-note">We respect your inbox. Unsubscribe anytime.</p>
+                <button class="cta-btn" onclick="showResults()">See My Results →</button>
+            </div>
+
+            <!-- Result Screens with Freebies -->
+            <div class="screen" id="result-high">
+                <span class="badge">YOUR RESULTS</span>
+                <div class="result-icon">🌟</div>
+                <h2>You're Ready for YTT</h2>
+                <p class="result-body">You're at the perfect point — open, committed, and excited for growth. Your practice and mindset align with what a 200HR training offers.</p>
+                <button class="cta-btn" onclick="showFreebies('high')">Claim Your Free Resources →</button>
+            </div>
+
+            <div class="screen" id="result-mid">
+                <span class="badge">YOUR RESULTS</span>
+                <div class="result-icon">✨</div>
+                <h2>You're Close — Just Need Prep</h2>
+                <p class="result-body">With some consistency and grounding, you'll be ready for training. Start with our 7-day prep course to build confidence.</p>
+                <button class="cta-btn" onclick="showFreebies('mid')">Claim Your Free Resources →</button>
+            </div>
+
+            <div class="screen" id="result-low">
+                <span class="badge">YOUR RESULTS</span>
+                <div class="result-icon">🌱</div>
+                <h2>Keep Exploring Your Practice</h2>
+                <p class="result-body">A YTT might be right for you later. Build your foundation first with regular practice and beginner workshops.</p>
+                <button class="cta-btn" onclick="showFreebies('low')">Claim Your Free Resources →</button>
+            </div>
+
+            <!-- Freebies Claim Screen -->
+            <div class="screen" id="screen-freebies">
+                <span class="badge">CLAIM YOUR FREEBIES</span>
+                <h2>Get Ready for Your YTT</h2>
+                <p class="subhead">Based on your results, here's what we're sending you:</p>
+
+                <div class="freebies-list">
+                    <div class="freebie-card">
+                        <div class="freebie-icon">📖</div>
+                        <div class="freebie-content">
+                            <h3>Bali YTT Guide</h3>
+                            <p>Top studios, cafés, rituals, packing list, and how to prepare.</p>
+                        </div>
+                    </div>
+
+                    <div class="freebie-card" id="consultation-card" style="display: none;">
+                        <div class="freebie-icon">🤝</div>
+                        <div class="freebie-content">
+                            <h3>1-on-1 Consultation</h3>
+                            <p>30-minute call with our lead teacher to discuss your path.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="freebieForm" onsubmit="claimFreebies(event)">
+                    <div class="form-group">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" placeholder="Jane Smith" required>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="guide" checked disabled>
+                            <label for="guide">Send me the Bali YTT Guide PDF</label>
+                        </div>
+
+                        <div class="checkbox-wrapper" id="consultation-checkbox" style="display: none;">
+                            <input type="checkbox" id="consultation" checked>
+                            <label for="consultation">I want to book a 1-on-1 consultation</label>
+                        </div>
+                    </div>
+
+                    <p class="privacy-note">We respect your inbox. No spam, just helpful guidance.</p>
+
+                    <button type="submit" class="cta-btn">Send Me My Resources →</button>
+                </form>
+            </div>
+
+            <!-- Thank You Screen -->
+            <div class="screen" id="screen-thanks">
+                <div class="success-message">
+                    <div class="success-icon">✓</div>
+                    <h2>Check your inbox</h2>
+                    <p class="subhead">Your Bali YTT Guide is on its way. <span id="consultation-note" style="display: none;">We'll send consultation booking details within 24 hours.</span></p>
+
+                    <div class="download-links">
+                        <a href="#" class="download-btn" onclick="handlePdfDownload(event)">
+                            <span>
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download PDF now
+                            </span>
+                            <span class="arrow-icon">→</span>
+                        </a>
+
+                        <a href="#" class="download-btn" id="booking-link" style="display: none;" onclick="handleBookingClick(event)">
+                            <span>
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                Book consultation
+                            </span>
+                            <span class="arrow-icon">→</span>
+                        </a>
+                    </div>
+
+                    <button class="cta-btn" onclick="closePopup()">Back to site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
